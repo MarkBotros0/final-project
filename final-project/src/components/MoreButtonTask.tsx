@@ -16,24 +16,6 @@ export default function MoreButtonTask() {
     const themeMode = useAppSelector((state) => state.theme.themeMode)
     const dispatch = useAppDispatch()
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleDelete = () => {
-        dispatch(closeModal())
-        dispatch(openModal({ type: "deleteTask" }))
-    };
-    
-    const handleEdit = () => {
-        dispatch(closeModal())
-        dispatch(openModal({ type: "editTask" }))
-    };
-
     return (
         <div>
             <IconButton
@@ -42,7 +24,7 @@ export default function MoreButtonTask() {
                 aria-controls={open ? 'long-menu' : undefined}
                 aria-expanded={open ? 'true' : undefined}
                 aria-haspopup="true"
-                onClick={handleClick}
+                onClick={(event) => setAnchorEl(event.currentTarget)}
             >
                 <MoreVertIcon sx={{ fontSize: "30px", color: themes[themeMode].drawerText }} />
             </IconButton>
@@ -54,7 +36,7 @@ export default function MoreButtonTask() {
                 }}
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
+                onClose={() => setAnchorEl(null)}
                 PaperProps={{
                     style: {
                         maxHeight: ITEM_HEIGHT * 4.5,
@@ -64,10 +46,10 @@ export default function MoreButtonTask() {
                 }}
             >
 
-                <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleEdit}>
+                <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={() => dispatch(openModal({ type: "editTask" }))}>
                     Edit Task
                 </MenuItem>
-                <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleDelete}>
+                <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={() => dispatch(openModal({ type: "deleteTask" }))}>
                     Delete Task
                 </MenuItem>
 

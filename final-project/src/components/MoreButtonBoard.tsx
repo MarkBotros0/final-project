@@ -16,23 +16,6 @@ export default function MoreButtonDashBoard() {
   const themeMode = useAppSelector((state) => state.theme.themeMode)
   const dispatch = useAppDispatch()
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleDelete = () => {
-    handleClose()
-    dispatch(openModal({ type: "deleteBoard" }))
-  };
-  const handleEdit = () => {
-    handleClose()
-    dispatch(openModal({ type: "editBoard" }))
-  };
-
   return (
     <div>
 
@@ -42,7 +25,7 @@ export default function MoreButtonDashBoard() {
         aria-controls={open ? 'long-menu' : undefined}
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
-        onClick={handleClick}
+        onClick={(event) => setAnchorEl(event.currentTarget)}
       >
         <MoreVertIcon sx={{ fontSize: "30px", color: themes[themeMode].drawerText }} />
       </IconButton>
@@ -54,7 +37,7 @@ export default function MoreButtonDashBoard() {
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={() => setAnchorEl(null)}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
@@ -64,10 +47,10 @@ export default function MoreButtonDashBoard() {
         }}
 
       >
-        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleEdit}>
+        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={() => dispatch(openModal({ type: "editBoard" }))}>
           Edit Board
         </MenuItem>
-        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleDelete}>
+        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={() => dispatch(openModal({ type: "deleteBoard" }))}>
           Delete Board
         </MenuItem>
       </Menu>
