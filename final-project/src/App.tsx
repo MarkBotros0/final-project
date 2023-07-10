@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <div className='app'>
+    <div className='app' style={{fontFamily:"'Plus Jakarta Sans', sans-serif"}}>
       {screenWidth > 768 ?
         <Desktop /> :
         <Mobile />

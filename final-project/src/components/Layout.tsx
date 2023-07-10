@@ -93,7 +93,7 @@ export default function Layout({ children }: PersistentDrawerProps) {
     }, [selectedBoard])
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', }}>
             <CssBaseline />
 
             <AppBar position="fixed" open={open}
@@ -105,7 +105,7 @@ export default function Layout({ children }: PersistentDrawerProps) {
                     borderColor: themes[themeMode].appBarBorder
                 }}
             >
-                <Toolbar sx={{ boxShadow: "none", pb: "20px", pt: "10px" }}>
+                <Toolbar sx={{ boxShadow: "none", pb: "20px", pt: "10px", }}>
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", mt: "10px" }}>
                         <Box sx={{ display: "flex", alignItems: "center" }}>
                             <Box display={open ? 'none' : 'flex'} sx={{ borderColor: themes[themeMode].drawerText, width: drawerWidth }}>
@@ -143,21 +143,22 @@ export default function Layout({ children }: PersistentDrawerProps) {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                     },
+                    bgcolor: themes[themeMode].drawerBg
                 }}
                 variant="persistent"
                 anchor="left"
                 open={open}
             >
-                <DrawerHeader sx={{ padding: "20px", margin: "0", justifyContent: "start" }}>
+                <DrawerHeader sx={{ padding: "20px", margin: "0", justifyContent: "start", bgcolor: themes[themeMode].drawerBg }}>
                     <Box sx={{ display: "flex", marginTop: "10px", borderColor: themes[themeMode].drawerText, alignItems: "center", justifyContent: "start" }}>
                         <img alt='#' src={Logo} />
-                        <Typography sx={{ pl: "15px", fontWeight: "bold", fontSize: "25px" }} noWrap component="div">
+                        <Typography sx={{ pl: "15px", fontWeight: "bold", fontSize: "25px", color: themes[themeMode].appbarText }} noWrap component="div">
                             Kanban
                         </Typography>
                     </Box>
                 </DrawerHeader>
 
-                <Box sx={{ pr: "20px", display: "flex", height: "100%", justifyContent: "space-between", flexDirection: "column" }}>
+                <Box sx={{ pr: "20px", display: "flex", height: "100%", justifyContent: "space-between", flexDirection: "column", bgcolor: themes[themeMode].drawerBg }}>
 
                     <Box>
                         <Typography sx={{ fontSize: "12px", textTransform: "uppercase", color: themes[themeMode].drawerText, ml: "30px", lineHeight: "15px", fontWeight: "bold", py: "20px" }}>
@@ -220,7 +221,7 @@ export default function Layout({ children }: PersistentDrawerProps) {
 
                 </Box>
 
-                <Box sx={{ mb: "30px" }}>
+                <Box sx={{ pb: "30px", bgcolor: themes[themeMode].drawerBg }}>
                     <Box sx={{ px: "20px", mb: '20px' }}>
                         <Switch />
                     </Box>
