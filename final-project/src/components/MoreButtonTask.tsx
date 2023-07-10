@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
 import { themes } from '../config/themes';
-import { openModal } from '../redux/modal/modalSlice';
+import { closeModal, openModal } from '../redux/modal/modalSlice';
 
 const ITEM_HEIGHT = 48;
 
@@ -25,11 +25,12 @@ export default function MoreButtonTask() {
     };
 
     const handleDelete = () => {
-        handleClose()
+        dispatch(closeModal())
         dispatch(openModal({ type: "deleteTask" }))
     };
+    
     const handleEdit = () => {
-        handleClose()
+        dispatch(closeModal())
         dispatch(openModal({ type: "editTask" }))
     };
 

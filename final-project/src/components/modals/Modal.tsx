@@ -4,6 +4,7 @@ import EditBoardModal from './EditBoardModal'
 import PreviewTaskModal from './PreviewTaskModal'
 import AddTaskModal from './AddTaskModal'
 import EditTaskModal from './EditTaskModal'
+import DeleteTaskModal from './DeleteTaskModal'
 
 type ModalProps = {
     screenWidth: number
@@ -18,7 +19,7 @@ const AllModals = ({ screenWidth }: ModalProps) => {
             <PreviewTaskModal screenWidth={screenWidth} />
             <AddTaskModal screenWidth={screenWidth} />
             <EditTaskModal screenWidth={screenWidth} />
-            <DeleteBoardModal screenWidth={screenWidth} />
+            <DeleteTaskModal screenWidth={screenWidth} />
         </>
     )
 }
