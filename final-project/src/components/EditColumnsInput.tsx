@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { TextField, Button, IconButton, Box, Stack } from '@mui/material';
+import { TextField, Button, IconButton, Stack } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAppSelector } from '../hooks/reduxHooks';
 import { themes } from '../config/themes';
-import { useSelector } from 'react-redux';
 
 interface list {
     name: string,

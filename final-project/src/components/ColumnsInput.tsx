@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, IconButton, Box, Stack } from '@mui/material';
+import { TextField, Button, IconButton, Stack } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAppSelector } from '../hooks/reduxHooks';
 import { themes } from '../config/themes';
@@ -65,7 +65,6 @@ const ColumnsInput: React.FC<ColumnsInputProps> = ({ listNames, getColumns }) =>
             >
                 + Add New Column
             </Button>
-            {/* </Box> */}
         </div>
     );
 };

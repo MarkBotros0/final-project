@@ -1,9 +1,7 @@
-import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { themes } from '../config/themes';
 import { Button } from '@mui/material';
-import Modal from './modals/AddTaskModal';
 import { openModal } from '../redux/modal/modalSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
 

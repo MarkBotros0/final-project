@@ -50,11 +50,7 @@ export const boardsSlice = createSlice({
         },
         setFirstBoard: (state) => {
             state.selectedBoard = state.boards[0]
-        },
-        // addNewdeleteOldBoard: (state, action) => {
-        //     const oldBoardIndex = state.boards.findIndex(board => board.id === action.payload.oldBoardId);
-        //     state.boards[oldBoardIndex] = action.payload.newBoard
-        // },
+        }
     },
 });
 

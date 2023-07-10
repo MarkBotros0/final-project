@@ -260,6 +260,7 @@ export default function Layout({ children }: PersistentDrawerProps) {
                     </IconButton>}
                 {children}
             </Main>
+            
         </Box>
     );
 }

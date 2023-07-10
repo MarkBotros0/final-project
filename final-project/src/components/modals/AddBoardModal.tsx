@@ -19,7 +19,6 @@ export default function AddBoardModal({ screenWidth }: { screenWidth: number }) 
     const [formData, setFormData] = useState({ name: '' })
     const [columnInputs, setColumnInputs] = useState([""])
 
-
     const getColumns = (columns: string[]) => {
         setColumnInputs(columns)
     }

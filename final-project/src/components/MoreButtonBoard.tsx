@@ -7,11 +7,6 @@ import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
 import { themes } from '../config/themes';
 import { openModal } from '../redux/modal/modalSlice';
 
-const options = [
-  'Edit Board',
-  'Delete Board',
-];
-
 const ITEM_HEIGHT = 48;
 
 export default function MoreButtonDashBoard() {
@@ -40,6 +35,7 @@ export default function MoreButtonDashBoard() {
 
   return (
     <div>
+
       <IconButton
         aria-label="more"
         id="long-button"
@@ -63,16 +59,19 @@ export default function MoreButtonDashBoard() {
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
             width: '20ch',
+            backgroundColor: themes[themeMode].drawerBg
           },
         }}
+
       >
-        <MenuItem onClick={handleEdit}>
+        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleEdit}>
           Edit Board
         </MenuItem>
-        <MenuItem onClick={handleDelete}>
+        <MenuItem sx={{ color: themes[themeMode].appbarText }} onClick={handleDelete}>
           Delete Board
         </MenuItem>
       </Menu>
+
     </div>
   );
 }

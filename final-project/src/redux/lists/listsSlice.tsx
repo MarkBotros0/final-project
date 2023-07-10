@@ -64,7 +64,6 @@ export const fetchLists = (boardID: string) => (dispatch: Dispatch): void => {
         });
 }
 
-
 export const editLists = (oldLists: list[], newLists: list[], board: { id: string, name: string }, newName: string) => (dispatch: Dispatch) => {
 
     // rename board

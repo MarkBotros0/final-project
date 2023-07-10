@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import { themes } from '../../config/themes';
 import Grid from '@mui/material/Grid/Grid';
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
-import List from '../List';
 import { openModal } from '../../redux/modal/modalSlice';
 import NoColumnScreen from './NoColumnScreen';
 import ListMobile from './ListMobile';
@@ -16,7 +15,7 @@ const MobileListScreen = () => {
 
     const dispatch = useAppDispatch()
 
-    const colorArr = ["#50BFE6", "#FD3A4A", "#FFF700", "#9C51B6", "#AF6E4D", "#FF007C", "#FFAA1D", "#FF00CC"]
+    const colorArr = ["#50BFE6", "#FD3A4A", "#FFF700", "#9C51B6", "#AF6E4D", "#FF007C", "#FFAA1D", "#FF00CC","#50BFE6", "#FD3A4A", "#FFF700", "#9C51B6"]
 
     return (
         <div style={{ height: "100%" }}>

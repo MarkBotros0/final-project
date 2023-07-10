@@ -1,4 +1,3 @@
-import React from 'react'
 import AddBoardModal from './AddBoardModal'
 import DeleteBoardModal from './DeleteBoardModal'
 import EditBoardModal from './EditBoardModal'

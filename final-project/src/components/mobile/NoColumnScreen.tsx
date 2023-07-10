@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import { openModal } from '../../redux/modal/modalSlice'
 import { themes } from '../../config/themes'
@@ -7,7 +6,6 @@ import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 const NoColumnScreen = () => {
 
     const themeMode = useAppSelector((state) => state.theme.themeMode)
-
     const dispatch = useAppDispatch()
 
     return (
@@ -25,7 +23,6 @@ const NoColumnScreen = () => {
                     </Typography>
                 </Box>
             </Grid >
-
         </div>
     )
 }

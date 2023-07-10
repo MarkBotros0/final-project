@@ -22,7 +22,6 @@ export default function AddTaskModal({screenWidth}:{screenWidth:number}) {
      setFormData({ title: "", desc: "", status: " " })
     }, [modalState])
     
-
     const theme = createTheme({
         components: {
             MuiTextField: {
@@ -92,7 +91,6 @@ export default function AddTaskModal({screenWidth}:{screenWidth:number}) {
                     </Typography>
 
                     <form onSubmit={onSubmit}>
-
                         <ThemeProvider theme={theme}>
                             <FormControl fullWidth>
                                 <Typography variant="h6" sx={{ color: themes[themeMode].modal.headers, fontSize: "15px", fontWeight: "bold" }}>
@@ -142,6 +140,7 @@ export default function AddTaskModal({screenWidth}:{screenWidth:number}) {
                                 </Select>
                             </FormControl>
                         </ThemeProvider>
+
                         <ThemeProvider theme={theme}>
                             <Box sx={{ display: 'flex', mt: "20px" }}>
                                 <Button

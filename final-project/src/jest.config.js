@@ -5,4 +5,4 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest'
   }
-};
+}; 
